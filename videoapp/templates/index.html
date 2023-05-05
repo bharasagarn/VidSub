@@ -37,7 +37,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
+      <a href="/" class="logo d-flex align-items-center  me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="{% static 'img/logo.png" alt=""> -->
         <i class="bi bi-camera"></i>
@@ -46,16 +46,11 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="/" class="active">Home</a></li>
           <li><a href="#">About</a></li>
-          <li class="dropdown"><a href="#"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="#"><span>Login</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="#">Nature</a></li>
-              <li><a href="#">People</a></li>
-              <li><a href="#">Architecture</a></li>
-              <li><a href="#">Animals</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Travel</a></li>
+              <li><a href="#">Google</a></li>
             </ul>
           </li>
           <li><a href="#">More</a></li>
@@ -98,7 +93,7 @@
           
           <div class="col-xl-4 col-md-6">
             <div class="gallery-item">
-              <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+              <video width="500" height="350" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
                 <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4"></source>
               </video>  
             </div>
@@ -106,56 +101,56 @@
 
           <div class="col-xl-4 col-md-6">
             <div class="gallery-item">
-              <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-                <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4"></source>
+              <video width="500" height="350" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                <source src="{% static 'vid/plane_flight_start_flying_airplane_723.mp4' %}" type="video/mp4"></source>
               </video>  
             </div>
           </div>
 
           <div class="col-xl-4 col-md-6">
             <div class="gallery-item">
-              <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-                <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4"></source>
+              <video width="500" height="350" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                <source src="{% static 'vid/atmosphere_planets_nasa_511.mp4' %}" type="video/mp4"></source>
               </video>  
             </div>
           </div>
 
           <div class="col-xl-4 col-md-6">
             <div class="gallery-item">
-              <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-                <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4"></source>
+              <video width="500" height="350" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                <source src="{% static 'vid/helicopters_airshow_stunt_flight_983.mp4' %}" type="video/mp4"></source>
               </video>  
             </div>
           </div>
 
           <div class="col-xl-4 col-md-6">
             <div class="gallery-item">
-              <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-                <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4"></source>
+              <video width="500" height="350" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                <source src="{% static 'vid/people_communicating_smartphones_1028.mp4' %}" type="video/mp4"></source>
               </video>  
             </div>
           </div>
 
           <div class="col-xl-4 col-md-6">
             <div class="gallery-item">
-              <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-                <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4"></source>
+              <video width="500" height="350" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                <source src="{% static 'vid/city_people_walking_shopping_urban_1016.mp4' %}" type="video/mp4"></source>
               </video>  
             </div>
           </div>
 
           <div class="col-xl-4 col-md-6">
             <div class="gallery-item">
-              <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-                <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4"></source>
+              <video width="500" height="350" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                <source src="{% static 'vid/notebook_laptop_blur_home_office_426.mp4' %}" type="video/mp4"></source>
               </video>  
             </div>
           </div>
 
           <div class="col-xl-4 col-md-6">
             <div class="gallery-item">
-              <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
-                <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4"></source>
+              <video width="500" height="350" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                <source src="{% static 'vid/dog_lazy_sleepy_sleeping_tired_390.mp4' %}" type="video/mp4"></source>
               </video>  
             </div>
           </div>
