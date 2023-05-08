@@ -1,124 +1,138 @@
-{% extends 'admins/base.html' %}
-{% load static %}
-{% block body%}
+{% extends 'admins/base.html' %} {% load static %} {% block body%}
 
-<section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
- <div class="container mt-4">
-  <div class="row">
-    {% for x in videos %}
-    <div class="card col-lg-4 mx-5" style="width: 18rem;"> 
-    <video class="embed-responsive embed-responsive-16by9 mt-2" controls="controls" >
-      <source src="{{x.video.url}}" type="video/mp4" />
-      </video>
-      <div class="card-body">
-      <h5 class="card-title font-weight-bold text-dark">{{x.video_title}}</h5>
-      <p class="card-text text-dark">{{x.video_description}}</p>
-      <span><button d="rzp-button1"  class="btn btn-primary mx-3 float-md-right">{{x.price}} Buy</button><a href="#" class="btn btn-success bi bi-cart"> Cart</a></span>
-    </div>
-  </div>
-  {% endfor %}
-
-  </div>
-  
-
-
-
- </div>
-  
-  
-  {% comment %} <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
-          <div class="container">
-            {% for x in videos %}
-            <video class="embed-responsive embed-responsive-16by9" controls="controls" >
-            <source src="{{x.video.url}}" type="video/mp4" />
-            </video>
-            <h3 class="text-center mt-2 mb-2">{{x.video_title}}</h3>
-            <h3 class="text-center mt-2 mb-2">{{x.video_title}}</h3>
-            <h3 class="text-center mt-2 mb-2">{{x.video_title}}</h3>
-            {% endfor %}
-        </div>
+<section
+  id="hero"
+  class="hero d-flex flex-column justify-content-center align-items-center"
+  data-aos="fade"
+  data-aos-delay="1500"
+>
+  <div class="container mt-4">
+    <div class="row">
+      {% for x in videos %}
+      <div class="card col-lg-4 mx-5" style="width: 18rem">
+        <video
+          class="embed-responsive embed-responsive-16by9 mt-2"
+          controls="controls"
+        >
+          <source src="{{x.video.url}}" type="video/mp4" />
+        </video>
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold text-dark">
+            {{x.video_title}}
+          </h5>
+          <p class="card-text text-dark">{{x.video_description}}</p>
+          <span
+            ><button
+              d="rzp-button1"
+              class="btn btn-primary mx-3 float-md-right"
+            >
+              {{x.price}} Buy</button
+            ><a href="#" class="btn btn-success bi bi-cart"> Cart</a></span
+          >
         </div>
       </div>
-    </div> {% endcomment %}
-  </section>
+      {% endfor %}
+    </div>
+  </div>
 
-        
-    
-    {% comment %} <script src="https://checkout.razorpay.com/v1/checkout.js"></script> {% endcomment %}
-{% comment %} 
-    <script>
-      var options = {
-        "key": "[rzp_test_DAm9Ek4yAvsAtD]", // Enter the Key ID generated from the Dashboard
-        "amount": "1000",
-        "currency": "INR",
-        "description": "VidSell",
-        "image": "https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg",
-        
-        config: {
-          display: {
-            blocks: {
-              utib: { //name for Axis block
-                name: "Pay using Axis Bank",
-                instruments: [
-                  {
-                    method: "card",
-                    issuers: ["UTIB"]
-                  },
-                  {
-                    method: "netbanking",
-                    banks: ["UTIB"]
-                  },
-                ]
-              },
-              other: { //  name for other block
-                name: "Other Payment modes",
-                instruments: [
-                  {
-                    method: "card",
-                    issuers: ["ICIC"]
-                  },
-                  {
-                    method: 'netbanking',
-                  }
-                ]
-              }
-            },
-            hide: [
+  {% comment %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <div class="container">
+          {% for x in videos %}
+          <video
+            class="embed-responsive embed-responsive-16by9"
+            controls="controls"
+          >
+            <source src="{{x.video.url}}" type="video/mp4" />
+          </video>
+          <h3 class="text-center mt-2 mb-2">{{x.video_title}}</h3>
+          <h3 class="text-center mt-2 mb-2">{{x.video_title}}</h3>
+          <h3 class="text-center mt-2 mb-2">{{x.video_title}}</h3>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endcomment %}
+</section>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+  var options = {
+    key: "[rzp_test_DAm9Ek4yAvsAtD]", // Enter the Key ID generated from the Dashboard
+    amount: "1000",
+    currency: "INR",
+    description: "VidSell",
+    image: "https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg",
+
+    config: {
+      display: {
+        blocks: {
+          utib: {
+            //name for Axis block
+            name: "Pay using Axis Bank",
+            instruments: [
               {
-              method: "upi"
-              }
+                method: "card",
+                issuers: ["UTIB"],
+              },
+              {
+                method: "netbanking",
+                banks: ["UTIB"],
+              },
             ],
-            sequence: ["block.utib", "block.other"],
-            preferences: {
-              show_default_blocks: false // Should Checkout show its default blocks?
-            }
-          }
+          },
+          other: {
+            //  name for other block
+            name: "Other Payment modes",
+            instruments: [
+              {
+                method: "card",
+                issuers: ["ICIC"],
+              },
+              {
+                method: "netbanking",
+              },
+            ],
+          },
         },
-        "handler": function (response) {
-          alert(response.razorpay_payment_id);
+        hide: [
+          {
+            method: "upi",
+          },
+        ],
+        sequence: ["block.utib", "block.other"],
+        preferences: {
+          show_default_blocks: false, // Should Checkout show its default blocks?
         },
-        "modal": {
-          "ondismiss": function () {
-            if (confirm("Are you sure, you want to close the form?")) {
-              txt = "You pressed OK!";
-              console.log("Checkout form closed by the user");
-            } else {
-              txt = "You pressed Cancel!";
-              console.log("Complete the Payment")
-            }
-          }
+      },
+    },
+    handler: function (response) {
+      alert(response.razorpay_payment_id);
+    },
+    modal: {
+      ondismiss: function () {
+        if (confirm("Are you sure, you want to close the form?")) {
+          txt = "You pressed OK!";
+          console.log("Checkout form closed by the user");
+        } else {
+          txt = "You pressed Cancel!";
+          console.log("Complete the Payment");
         }
-      };
-      var rzp1 = new Razorpay(options);
-      document.getElementById('rzp-button1').onclick = function (e) {
-        rzp1.open();
-        e.preventDefault();
-      }
-    </script> {% endcomment %}
-    <!-- Optional JavaScript; choose one of the two! -->
-    
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    
+      },
+    },
+  };
+  var rzp1 = new Razorpay(options);
+  document.getElementById("rzp-button1").onclick = function (e) {
+    rzp1.open();
+    e.preventDefault();
+  };
+</script>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+
 {% endblock body %}
