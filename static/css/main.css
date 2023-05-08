@@ -184,6 +184,10 @@ h6 {
   z-index: 99999;
 }
 
+.navbar a.active{
+  background-color: #999;
+}
+
 #preloader:before,
 #preloader:after {
   content: "";
@@ -389,11 +393,28 @@ h6 {
   }
 
   .navbar a:hover,
+  .navbar a:visited,
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
     color: #fff;
   }
+
+ #nav-items li a:active{
+  color: #27a776;
+ }
+
+  /* .navbar-nav>.active>a {
+    background-color: #C0C0C0;
+    color: green;
+} */
+
+.navbar>a :visited{
+  color: #27a776;
+}
+
+
+
 
   .navbar .dropdown ul {
     display: block;

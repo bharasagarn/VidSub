@@ -1,0 +1,58 @@
+{% extends 'admins/base.html' %}
+{% load static %}
+{% block title %} {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
+    <div class="container">
+        {% if request.user.is_authenticated %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1 class="font-weight-bold mb-4 text-center">Video</h1>
+        <div class="row text-center">{{form.as_p}}
+        
+        <button class="btn btn-success btn-lg">Upload</button></div>
+    {% comment %} <div class="row mt-4">
+        <h1 class="font-weight-bold mb-4">Video</h1>
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold; text-white">Video</i></label>
+            <input type="file" class="form-control mt-2" name="video" placeholder="chose video" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Video Title</i></label>
+            <input type="text" class="form-control mt-2" name="author" placeholder="video title" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Video Description</i></label>
+            <input type="number" class="form-control mt-2" name="isbn" placeholder="Video description" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Price</i></label>
+            <input type="text" class="form-control mt-2" name="category" placeholder="Price of Video" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary mt-4">Upload</button> {% endcomment %}
+    </form>
+</div>
+{% endif %}
+
+</section>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Book is added successfully.")
+    document.location = "/"
+    {% endif %}
+</script>
+{% endblock %}
